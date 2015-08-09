@@ -1,0 +1,28 @@
+<div class="alert alert-danger">
+  <%= @appointment.errors.full_messages.first if @appointment.errors.any? %>
+</div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Appointment date:</strong>
+  <%= @appointment.appointment_date %>
+</p>
+
+<p>
+  <strong>Pet:</strong>
+  <%= @appointment.pet %>
+</p>
+
+
+<p>
+  <strong>Requires remainder:</strong>
+  <%= @appointment.requires_remainder %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @appointment.reason %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

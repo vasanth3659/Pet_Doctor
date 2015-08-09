@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pet name:</strong>
+  <%= @pet_info.pet_name %>
+</p>
+
+<p>
+  <strong>Pet type:</strong>
+  <%= @pet_info.pet_type %>
+</p>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @pet_info.breed %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @pet_info.age %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @pet_info.weight %>
+</p>
+
+<p>
+  <strong>Last visited date:</strong>
+  <%= @pet_info.last_visited_date %>
+</p>
+
+<%= link_to 'Edit', edit_pet_info_path(@pet_info) %> |
+<%= link_to 'Back', pet_infos_path %>

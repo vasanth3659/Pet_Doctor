@@ -1,0 +1,26 @@
+<h1> Create new user </h1>
+<%= form_for :user, :url => {action: "create"} do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br/>
+  <%= f.label :email %>:
+  <%= f.text_field :email %><br/>
+  <%= f.label :address %>:
+  <%= f.text_field :address %><br/>
+  <%= f.label :city %>:
+  <%= f.text_field :city %><br/>
+  <%= f.label :zip %>:
+  <%= f.text_field :zip %><br/>
+  <%= f.label :practice %>:
+  <%= f.number_field :practice %><br/>
+  <%= f.label :school_name %>:
+  <%= f.text_field :school_name %><br/>
+  <%= f.label :state %>:
+  <%= f.text_field :state %><br/>
+  <%= f.label :role %>:
+  <%= select(:role, "", ['doctor', 'receptionist', "general_user"]) %>
+ <br/>
+  <%= f.label :password %>:
+  <%= f.password_field :password, autocomplete: "off" %><br/>
+  <%= f.submit %>
+<% end %>
+

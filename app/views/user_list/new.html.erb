@@ -1,0 +1,5 @@
+<div class="alert alert-danger">
+  <%= @user_list.errors.full_messages.first if @user_list.errors.any? %>
+</div>
+
+<%= render partial: "form" %>

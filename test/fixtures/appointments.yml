@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointment_date: 2015-08-07
+  pet: MyString
+  costumer_name: MyString
+  requires_remainder: false
+  reason: MyText
+
+two:
+  appointment_date: 2015-08-07
+  pet: MyString
+  costumer_name: MyString
+  requires_remainder: false
+  reason: MyText

@@ -1,0 +1,51 @@
+
+<%= @appointment.errors.full_messages.first if @appointment.errors.any? %>
+
+<%= form_for(@appointment) do |f| %>
+  <% if @appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+      <ul>
+      <% @appointment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="date_field">
+    <%= f.label :appointment_date %>
+    <%= f.text_field :appointment_date, class: "datepicker" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :pet %>
+    <%= f.text_field :pet %>
+  </div><br>
+  <div class="field">
+    <%= f.label :costumer_name %>
+    <%= select("costumer", "id", @costumer_list, { :include_blank => false })%>
+  </div><br>
+  <div class="field">
+    <%= f.label :doctor_name %> 
+    <%= select("doctor", "id", @doctors_list, { :include_blank => false })%>
+  </div><br>
+  <div class="field">
+    <%= f.label :requires_remainder %>
+    <%= f.check_box :requires_remainder %>
+  </div><br>
+  <div class="field">
+    <%= f.label :reason %>
+    <%= f.text_area :reason %>
+  </div><br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  var dateToday = new Date(); 
+  $(document).ready(function(){
+    $('.datepicker').datepicker({
+      minDate: dateToday
+    });
+  });
+</script>
